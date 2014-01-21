@@ -19,7 +19,7 @@ One the plugin has been installed, it may be enabled inside your Gruntfile with 
 In your project's Gruntfile, add a section named `svn-fetch` to the data object passed into `grunt.initConfig()`.
 
 	grunt.initConfig({
-		svn-fetch: {
+		'svn-fetch': {
 			options: {
 				// Task-specific options go here.
 			},
@@ -66,7 +66,7 @@ The base element of the path to where checked out or updated files are placed.
 ### Usage Examples
 
 	grunt.initConfig({
-		svn-fetch: {
+		'svn-fetch': {
 			options: {
 				'repository':	'https://my_repos.com/projectX/trunk/',
 				'path': 		'/svn/projectX/src/'
