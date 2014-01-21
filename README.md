@@ -13,13 +13,13 @@ One the plugin has been installed, it may be enabled inside your Gruntfile with 
 
 	grunt.loadNpmTasks('grunt-svn-fetch');
 
-## The "svn_fetch" task
+## The "svn-fetch" task
 
 ### Overview
-In your project's Gruntfile, add a section named `svn_fetch` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `svn-fetch` to the data object passed into `grunt.initConfig()`.
 
 	grunt.initConfig({
-		svn_fetch: {
+		svn-fetch: {
 			options: {
 				// Task-specific options go here.
 			},
@@ -66,7 +66,7 @@ The base element of the path to where checked out or updated files are placed.
 ### Usage Examples
 
 	grunt.initConfig({
-		svn_fetch: {
+		svn-fetch: {
 			options: {
 				'repository':	'https://my_repos.com/projectX/trunk/',
 				'path': 		'/svn/projectX/src/'
@@ -94,3 +94,4 @@ Note the inclusion of slashes on the option entries. The plugin makes no effort 
 * 2013-03-13 0.1.0 Initial release
 * 2013-03-13 0.1.2 Issue #1 fixed
 * 2013-12-11 0.1.3 Issue #2 fixed
+* 2014-01-21 0.2.0 Forked LMnet/grunt-svn-fetch. Full rebuild of plugin. Renamed to 'svn-fetch'.
