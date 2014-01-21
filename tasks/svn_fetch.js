@@ -22,26 +22,19 @@ module.exports = function (grunt) {
 			execOptions: {}
 		});
 		var done = this.async();
-		var map = this.data.map;
-		if (map != undefined) {
-			processMap();
-		} else {
-			grunt.log.error('\n\'map\' missing.');
-			done(true);
-		}
 
-		function processMap() {
-			var paths = Object.keys(map);
-			getNextMapping();
-
-			function getNextMapping() {
+		var processMap = function(map) {
+			var getNextMapping = function() {
 				if (paths.length > 0) {
 					processPath(paths.shift());
 				} else {
 					grunt.log.write('\n');
 					done(true);
 				}
-			}
+			};
+
+			var paths = Object.keys(map);
+			getNextMapping();
 
 			function processPath(path) {
 				var command = options.bin;
@@ -60,6 +53,14 @@ module.exports = function (grunt) {
 					getNextMapping();
 				});
 			}
+		};
+
+		var map = this.data.map;
+		if (map !== undefined) {
+			processMap(map);
+		} else {
+			grunt.log.error('\n\'map\' missing.');
+			done(true);
 		}
 	});
 };
